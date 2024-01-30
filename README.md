@@ -27,35 +27,35 @@ First of all, I analyze duplicate values. With the `drop_duplicates()` method, w
 
 Next, I analyze columns. I have created a function that compares the values of one column against those of another. After executing the function, in several pairs of columns that seem similar in their values, we observe that:
 
-    - Columns "case_number.1" and "case_number" are 99% equal.
-    - Columns "case_number.2" and "case_number" are 99% equal.
-    - Columns "case_number.2" and "case_number.1" are 99% equal.
-    - As "case_number," "case_number.1," and "case_number.2" are 99% equal, I drop 2 of them, keeping "case_number."
-    - Columns "href" and "href_formula" are 98% equal. We can drop one of them → drop href_formula.
+ - Columns "case_number.1" and "case_number" are 99% equal.
+ - Columns "case_number.2" and "case_number" are 99% equal.
+ - Columns "case_number.2" and "case_number.1" are 99% equal.
+ - As "case_number," "case_number.1," and "case_number.2" are 99% equal, I drop 2 of them, keeping "case_number."
+ - Columns "href" and "href_formula" are 98% equal. We can drop one of them → drop href_formula.
 
 Data in "href" contains a link where a PDF document is stored on the internet. We extract the file name with a regex pattern to evaluate if it is the same information that we have in the column "pdf." Comparing the "href_pdf" file name and the "pdf" column, we see that "pdf" and "href_pdf" are 98% equal.
 
-    - Information in "href" is the same as in "pdf" → drop href.
+  - Information in "href" is the same as in "pdf" → drop href.
     
 
 ### Empty values:
 
 Next, we are going to analyze columns/rows that contain a majority of NaN values. A column/row that is not sufficiently completed won't give us any relevant information:
 
-    - "unnamed:_22" and "unnamed:_23" have just 1 and 2 non-null values.
-    - "age" colum has almost 50% NaN values → not accurate data.
-    - Drop rows to keep those with 80% completed values. Reduce data by 2%.
+  - "unnamed:_22" and "unnamed:_23" have just 1 and 2 non-null values.
+  - "age" colum has almost 50% NaN values → not accurate data.
+  - Drop rows to keep those with 80% completed values. Reduce data by 2%.
 
 
 ### Irrelevant data: 
 
 Now we are going to exclude those columns that won't be significant for the purpose of our analysis:
 
-    - "investigator_or_source"
-    - "original order"
-    - "name"
-    - Values referring to time/dates: "case_number," "date," "year," "time," "pdf"
-    - Values referring to location: "country," "area," "location"
+  - "investigator_or_source"
+  - "original order"
+  - "name"
+  - Values referring to time/dates: "case_number," "date," "year," "time," "pdf"
+  - Values referring to location: "country," "area," "location"
     
 He export the data set to save changes and continue with the analisis.
 
@@ -102,7 +102,7 @@ Now that we have cleaned all the data, we can continue with the analysis. In thi
 
 I created a countplot to visualize how many incidents were labeled as "Fatal" and how many as "Not Fatal" to analyze the chances of dying from a shark attack.
 
-shark_attacks_fatality.png
+![alt text](../images/shark_attacks_fatality.png)
 
 As seen in the graphic, in most cases, the attack does not result in fatality.
 
@@ -110,7 +110,7 @@ As seen in the graphic, in most cases, the attack does not result in fatality.
 
 Next, I explore how many times the victims get injured versus those who don't. I created a plot that visualized the count of attacks labeled as "Minor Injuries" or "Amputations and Lacerations."
 
-shark_attacks_injuries.png
+![alt text](../images/shark_attacks_injuries.png)
 
 This graphic shows us that even if it's not common to die during a shark attack, you probably will suffer severe injuries.
 
@@ -118,7 +118,7 @@ This graphic shows us that even if it's not common to die during a shark attack,
 
 Now that I know that severe injuries are more likely to occur, I want to dive deeper into which areas of the body are most targeted.
 
-shark_attacks_body_parts.png
+![alt text](../images/shark_attacks_body_parts.png)
 
 Upper extremities are injured in most of the attacks. This could be because people often tend to swim away from the shark and not into the shark.
 
@@ -128,7 +128,7 @@ Once we've clarified potential injuries, let's focus on the species that provoke
 
 For this plot, I need to create a subset of the top 5 species. I did that by filtering the subset using the series that generates `value_counts().head(5)`
 
-shark_attacks_shark_species.png
+![alt text](../images//shark_attacks_shark_species.png)
 
 ### 5. Avoiding Ranking
 
@@ -137,7 +137,7 @@ Now we want to cross-reference this information to evaluate which species are mo
 
  `dangerous = (% to suffer seveare injuries)*20 + (% to dye in the attack)*8`
  
-shark_attacks_avoid_table
+![alt text](../images/shark_attacks_avoid_table)
 
 By evaluating fatality (dead or not) and the tendency to cause severe injuries like amputations, we've created a ranking of the top 5 sharks to be cautious of.
 
