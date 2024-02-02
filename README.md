@@ -102,7 +102,7 @@ Now that we have cleaned all the data, we can continue with the analysis. In thi
 
 I created a countplot to visualize how many incidents were labeled as "Fatal" and how many as "Not Fatal" to analyze the chances of dying from a shark attack.
 
-![alt text](../images/shark_attacks_fatality.png)
+![alt text](images/shark_attacks_fatality.png)
 
 As seen in the graphic, in most cases, the attack does not result in fatality.
 
@@ -110,7 +110,7 @@ As seen in the graphic, in most cases, the attack does not result in fatality.
 
 Next, I explore how many times the victims get injured versus those who don't. I created a plot that visualized the count of attacks labeled as "Minor Injuries" or "Amputations and Lacerations."
 
-![alt text](../images/shark_attacks_injuries.png)
+![alt text](images/shark_attacks_injuries.png)
 
 This graphic shows us that even if it's not common to die during a shark attack, you probably will suffer severe injuries.
 
@@ -118,7 +118,7 @@ This graphic shows us that even if it's not common to die during a shark attack,
 
 Now that I know that severe injuries are more likely to occur, I want to dive deeper into which areas of the body are most targeted.
 
-![alt text](../images/shark_attacks_body_parts.png)
+![alt text](images/shark_attacks_body_parts.png)
 
 Upper extremities are injured in most of the attacks. This could be because people often tend to swim away from the shark and not into the shark.
 
@@ -128,7 +128,7 @@ Once we've clarified potential injuries, let's focus on the species that provoke
 
 For this plot, I need to create a subset of the top 5 species. I did that by filtering the subset using the series that generates `value_counts().head(5)`
 
-![alt text](../images//shark_attacks_shark_species.png)
+![alt text](images//shark_attacks_shark_species.png)
 
 ### 5. Avoiding Ranking
 
@@ -137,7 +137,7 @@ Now we want to cross-reference this information to evaluate which species are mo
 
  `dangerous = (% to suffer seveare injuries)*20 + (% to dye in the attack)*8`
  
-![alt text](../images/shark_attacks_avoid_table)
+![alt text](images/shark_attacks_avoid_table)
 
 By evaluating fatality (dead or not) and the tendency to cause severe injuries like amputations, we've created a ranking of the top 5 sharks to be cautious of.
 
