@@ -137,7 +137,7 @@ Now we want to cross-reference this information to evaluate which species are mo
 
  `dangerous = (% to suffer seveare injuries)*20 + (% to dye in the attack)*8`
  
-![alt text](images/shark_attacks_avoid_table)
+![alt text](images/shark_attacks_avoid_table.png)
 
 By evaluating fatality (dead or not) and the tendency to cause severe injuries like amputations, we've created a ranking of the top 5 sharks to be cautious of.
 
